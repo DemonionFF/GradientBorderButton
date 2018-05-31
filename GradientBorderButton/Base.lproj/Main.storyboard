@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GradientBorderButton" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmY-E7-el6" customClass="GradientBorderButton" customModule="GradientBorderButton" customModuleProvider="target">
+                                <rect key="frame" x="20" y="40" width="335" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="mLj-6G-JFv"/>
+                                </constraints>
+                                <state key="normal" title="Update"/>
+                                <connections>
+                                    <action selector="updateButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fVf-gl-Ugl"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="fh0-td-nxI">
+                                <rect key="frame" x="18" y="577" width="339" height="31"/>
+                                <connections>
+                                    <action selector="borderWidthSliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="SHV-EL-qQ2"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="G6H-3W-417">
+                                <rect key="frame" x="18" y="498" width="339" height="31"/>
+                                <connections>
+                                    <action selector="cornerRadiusSliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="8IT-Sd-WOB"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Border width: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CG0-0l-M7h">
+                                <rect key="frame" x="20" y="548" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Corner radius: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mct-WB-bUc">
+                                <rect key="frame" x="20" y="469" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hvC-mG-KBh">
+                                <rect key="frame" x="111" y="619" width="153" height="29"/>
+                                <segments>
+                                    <segment title="Horizontal"/>
+                                    <segment title="Vertical"/>
+                                </segments>
+                                <connections>
+                                    <action selector="directionSegmentControlAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="s7N-zh-Nff"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hmY-E7-el6" secondAttribute="trailing" constant="20" id="1C4-q2-Dk8"/>
+                            <constraint firstItem="hvC-mG-KBh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="23S-tj-IMK"/>
+                            <constraint firstItem="hmY-E7-el6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="3T2-kI-tyV"/>
+                            <constraint firstItem="fh0-td-nxI" firstAttribute="top" secondItem="CG0-0l-M7h" secondAttribute="bottom" constant="8" id="5le-Gc-paI"/>
+                            <constraint firstItem="mct-WB-bUc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="K7j-OI-9zp"/>
+                            <constraint firstItem="CG0-0l-M7h" firstAttribute="top" secondItem="G6H-3W-417" secondAttribute="bottom" constant="20" id="LUJ-i4-igW"/>
+                            <constraint firstItem="hmY-E7-el6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Std-p2-gk6"/>
+                            <constraint firstItem="G6H-3W-417" firstAttribute="top" secondItem="mct-WB-bUc" secondAttribute="bottom" constant="8" id="Ten-xl-3AW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CG0-0l-M7h" secondAttribute="trailing" constant="20" id="Ue0-bg-ohs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hvC-mG-KBh" secondAttribute="bottom" constant="20" id="WOG-KI-rjj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fh0-td-nxI" secondAttribute="bottom" constant="60" id="XsY-mL-Ygj"/>
+                            <constraint firstItem="CG0-0l-M7h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="f0f-xl-Aog"/>
+                            <constraint firstItem="fh0-td-nxI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="h3y-ev-6Fg"/>
+                            <constraint firstItem="G6H-3W-417" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="iCX-cy-oab"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mct-WB-bUc" secondAttribute="trailing" constant="20" id="j9m-Sa-66L"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fh0-td-nxI" secondAttribute="trailing" constant="20" id="pGL-gt-gPg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G6H-3W-417" secondAttribute="trailing" constant="20" id="yPK-Ac-u1T"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="borderWidthLabel" destination="CG0-0l-M7h" id="yaZ-gT-Gpe"/>
+                        <outlet property="cornerRadiusLabel" destination="mct-WB-bUc" id="OEt-Zh-zfy"/>
+                        <outlet property="updateButton" destination="hmY-E7-el6" id="C90-ze-ZAE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
