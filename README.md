@@ -9,7 +9,7 @@ GradientBorderButton is a Swift library which can help you avoid some boilerplat
 
 
 
-![Alt text](Resources/Images/gradient.gif)
+![Alt text](Resources/Images/usage_example.gif)
 
 ## Installation
 
@@ -29,14 +29,13 @@ view.addSubview(gradientButton)
 ## Default values
 
 * BorderWidth = 1
-* LeftColor = UIColor.green
-* RightColor = UIColor.yellow
-* GrayColor = UIColor.lightGray
+* Colors = [.green, .yellow]
 * CornerRadius = 0
+* Direction = .horizontal
 
 ## Customization
 
-1. Available ```GradientButtonState```'s: ```.none```, ```.fill```, ```.border```, ```.borderGray```
+1. Available ```GradientButtonState```'s: ```.none```, ```.fill```, ```.border```
 ```swift
 yourGradientBorderButton.update(state: .fill)
 ```
@@ -44,10 +43,9 @@ yourGradientBorderButton.update(state: .fill)
 
 
 Available parameters: 
+* direction
 * borderWidth
-* leftColor
-* rightColor
-* grayColor
+* colors
 * cornerRadius
 
 Instantiate your options and pass them to button.
