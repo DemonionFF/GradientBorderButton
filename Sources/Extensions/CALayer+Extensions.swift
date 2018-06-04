@@ -24,14 +24,32 @@ import UIKit
 
 extension CALayer {
     
+    enum GradientDirection {
+        case vertical, horizontal
+        
+        var startPoint: CGPoint {
+            switch self {
+            case .vertical:             return CGPoint(x: 0.5, y: 0)
+            case .horizontal:           return CGPoint(x: 0, y: 0.5)
+            }
+        }
+        
+        var endPoint: CGPoint {
+            switch self {
+            case .vertical:             return CGPoint(x: 0.5, y: 1)
+            case .horizontal:           return CGPoint(x: 1, y: 0.5)
+            }
+        }
+    }
+    
     @discardableResult
-    func addGradientBorder(lineWidth: CGFloat, leftColor: UIColor, rightColor: UIColor) -> CAGradientLayer {
+    func addGradientBorder(direction: CALayer.GradientDirection, lineWidth: CGFloat, colors: [UIColor]) -> CAGradientLayer {
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = CGRect(x: 0, y: 0, width: bounds.size.width, height: bounds.size.height)
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
-        gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
-        gradientLayer.colors = [leftColor.cgColor, rightColor.cgColor]
+        gradientLayer.startPoint = direction.startPoint
+        gradientLayer.endPoint = direction.endPoint
+        gradientLayer.colors = colors.map{$0.cgColor}
         
         let shapeLayer = CAShapeLayer()
         shapeLayer.lineWidth = lineWidth
@@ -51,12 +69,12 @@ extension CALayer {
     }
     
     @discardableResult
-    func addFillGradient(leftColor: UIColor, rightColor: UIColor) -> CAGradientLayer {
+    func addFillGradient(direction: CALayer.GradientDirection = .horizontal, colors: [UIColor]) -> CAGradientLayer {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = CGRect(x: 0, y: 0, width: bounds.size.width, height: bounds.size.height)
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
-        gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
-        gradientLayer.colors = [leftColor.cgColor, rightColor.cgColor]
+        gradientLayer.startPoint = direction.startPoint
+        gradientLayer.endPoint = direction.endPoint
+        gradientLayer.colors = colors.map{$0.cgColor}
         insertSublayer(gradientLayer, at: 0)
         return gradientLayer
     }

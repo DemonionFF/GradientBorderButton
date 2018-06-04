@@ -30,6 +30,19 @@ class ViewController: UIViewController {
         borderWidthLabel.text = "Border width: \(Int(sender.value))"
     }
     
+    @IBAction private func directionSegmentControlAction(_ sender: UISegmentedControl) {
+        let direction: CALayer.GradientDirection
+        switch sender.selectedSegmentIndex {
+        case 0:
+            direction = .horizontal
+        case 1:
+            direction = .vertical
+        default:
+            direction = .horizontal
+        }
+        updateButton.configure(with: GradientButtonOptions(direction: direction))
+    }
+    
     @IBAction private func cornerRadiusSliderAction(_ sender: UISlider) {
         updateButton.configure(with: GradientButtonOptions(cornerRadius: CGFloat(Int(sender.value))))
         cornerRadiusLabel.text = "Corner radius: \(Int(sender.value))"
@@ -51,15 +64,11 @@ class ViewController: UIViewController {
         let actionBroder = UIAlertAction(title: GradientButtonState.border.title, style: .default) { (_) in
             self.update(with: .border)
         }
-        let actionBorderGray = UIAlertAction(title: GradientButtonState.borderGray.title, style: .default) { (_) in
-            self.update(with: .borderGray)
-        }
         let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
         alert.addAction(actionNone)
         alert.addAction(actionFill)
         alert.addAction(actionBroder)
-        alert.addAction(actionBorderGray)
         alert.addAction(actionCancel)
         present(alert, animated: true, completion: nil)
     }

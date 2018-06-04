@@ -24,31 +24,27 @@
 import UIKit
 
 enum GradientButtonState {
-    /// states will change accroding following/follower/requested
-    case none, border, fill, borderGray
+    case none, border, fill
     
     var title: String {
         switch self {
         case .none:             return "None"
         case .border:           return "Border"
         case .fill:             return "Fill"
-        case .borderGray:       return "Border Gray"
         }
     }
 }
 
 struct GradientButtonOptions {
     let borderWidth: CGFloat?
-    let leftColor: UIColor?
-    let rightColor: UIColor?
-    let grayColor: UIColor?
+    let colors: [UIColor]
     let cornerRadius: CGFloat?
+    let direction: CALayer.GradientDirection?
     
-    init(borderWidth: CGFloat? = nil, leftColor: UIColor? = nil, rightColor: UIColor? = nil, grayColor: UIColor? = nil, cornerRadius: CGFloat? = nil) {
+    init(direction: CALayer.GradientDirection? = nil, borderWidth: CGFloat? = nil, colors: [UIColor] = [], cornerRadius: CGFloat? = nil) {
+        self.direction = direction
         self.borderWidth = borderWidth
-        self.leftColor = leftColor
-        self.rightColor = rightColor
-        self.grayColor = grayColor
+        self.colors = colors
         self.cornerRadius = cornerRadius
     }
 }
@@ -57,10 +53,9 @@ class GradientBorderButton: UIButton {
     
     //MARK: - UI Properties
     private var gradientBorderWidth: CGFloat = 1
-    private var gradientLeftColor: UIColor = .green
-    private var gradientRightColor: UIColor = .yellow
-    private var grayColor: UIColor = .lightGray
+    private var colors: [UIColor] = [.green, .yellow]
     private var cornerRadius: CGFloat = 0
+    private var gradientDirection: CALayer.GradientDirection = .horizontal
     
     //MARK: - Layers
     private var gradientBorderLayer: CAGradientLayer?
@@ -80,10 +75,9 @@ class GradientBorderButton: UIButton {
     
     func configure(with options: GradientButtonOptions) {
         gradientBorderWidth = options.borderWidth ?? gradientBorderWidth
-        gradientLeftColor = options.leftColor ?? gradientLeftColor
-        gradientRightColor = options.rightColor ?? gradientRightColor
-        grayColor = options.grayColor ?? grayColor
+        colors = options.colors.isEmpty ? colors : options.colors
         cornerRadius = options.cornerRadius ?? cornerRadius
+        gradientDirection = options.direction ?? gradientDirection
         updateStateVisually()
     }
     
@@ -100,11 +94,9 @@ class GradientBorderButton: UIButton {
         removeAllGradientLayers()
         switch gradientState {
         case .border:
-            gradientBorderLayer = layer.addGradientBorder(lineWidth: gradientBorderWidth, leftColor: gradientLeftColor, rightColor: gradientRightColor)
+            gradientBorderLayer = layer.addGradientBorder(direction: gradientDirection, lineWidth: gradientBorderWidth, colors: colors)
         case .fill:
-            gradientLayer = layer.addFillGradient(leftColor: gradientLeftColor, rightColor: gradientRightColor)
-        case .borderGray:
-            gradientBorderLayer = layer.addGradientBorder(lineWidth: gradientBorderWidth, leftColor: grayColor, rightColor: grayColor)
+            gradientLayer = layer.addFillGradient(direction: gradientDirection, colors: colors)
         case .none:
             removeAllGradientLayers()
         }

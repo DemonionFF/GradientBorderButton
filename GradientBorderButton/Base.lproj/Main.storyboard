@@ -51,10 +51,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hvC-mG-KBh">
+                                <rect key="frame" x="111" y="619" width="153" height="29"/>
+                                <segments>
+                                    <segment title="Horizontal"/>
+                                    <segment title="Vertical"/>
+                                </segments>
+                                <connections>
+                                    <action selector="directionSegmentControlAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="s7N-zh-Nff"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hmY-E7-el6" secondAttribute="trailing" constant="20" id="1C4-q2-Dk8"/>
+                            <constraint firstItem="hvC-mG-KBh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="23S-tj-IMK"/>
                             <constraint firstItem="hmY-E7-el6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="3T2-kI-tyV"/>
                             <constraint firstItem="fh0-td-nxI" firstAttribute="top" secondItem="CG0-0l-M7h" secondAttribute="bottom" constant="8" id="5le-Gc-paI"/>
                             <constraint firstItem="mct-WB-bUc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="K7j-OI-9zp"/>
@@ -62,6 +73,7 @@
                             <constraint firstItem="hmY-E7-el6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Std-p2-gk6"/>
                             <constraint firstItem="G6H-3W-417" firstAttribute="top" secondItem="mct-WB-bUc" secondAttribute="bottom" constant="8" id="Ten-xl-3AW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CG0-0l-M7h" secondAttribute="trailing" constant="20" id="Ue0-bg-ohs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hvC-mG-KBh" secondAttribute="bottom" constant="20" id="WOG-KI-rjj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fh0-td-nxI" secondAttribute="bottom" constant="60" id="XsY-mL-Ygj"/>
                             <constraint firstItem="CG0-0l-M7h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="f0f-xl-Aog"/>
                             <constraint firstItem="fh0-td-nxI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="h3y-ev-6Fg"/>
