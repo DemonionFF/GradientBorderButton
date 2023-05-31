@@ -26,7 +26,7 @@
 		764E50AE20BEE08E00709473 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F074BE02A28111700738732 /* CALayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
 		9F074BE32A28112800738732 /* GradientBorderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientBorderButton.swift; sourceTree = "<group>"; };
-		9FCDC4C02A2808C800B7186D /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		9FCDC4C02A2808C800B7186D /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		9FCDC4C12A2808CF00B7186D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,7 +48,7 @@
 				764E50A120BEE08C00709473 /* GradientBorderButtonExample */,
 				764E50A020BEE08C00709473 /* Products */,
 				9FCDC4C12A2808CF00B7186D /* README.md */,
-				9FCDC4C02A2808C800B7186D /* LICENSE */,
+				9FCDC4C02A2808C800B7186D /* LICENSE.md */,
 			);
 			sourceTree = "<group>";
 		};

@@ -17,6 +17,11 @@ Main features:
 
 ## Installation
 
+#### Cocoapods 
+```ruby
+    pod 'GradientBorderButton'
+```
+
 #### Manually
 1. Download and drop ```Sources``` folder in your project.  
 2. Congratulations!
