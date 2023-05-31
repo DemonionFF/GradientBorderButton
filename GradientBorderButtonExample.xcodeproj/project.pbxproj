@@ -12,7 +12,8 @@
 		764E50A820BEE08C00709473 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 764E50A620BEE08C00709473 /* Main.storyboard */; };
 		764E50AA20BEE08E00709473 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 764E50A920BEE08E00709473 /* Assets.xcassets */; };
 		764E50AD20BEE08E00709473 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 764E50AB20BEE08E00709473 /* LaunchScreen.storyboard */; };
-		9FCDC4C42A28098A00B7186D /* GradientBorderButton in Frameworks */ = {isa = PBXBuildFile; productRef = 9FCDC4C32A28098A00B7186D /* GradientBorderButton */; };
+		9F074BE12A28111700738732 /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F074BE02A28111700738732 /* CALayer+Extensions.swift */; };
+		9F074BE42A28112800738732 /* GradientBorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F074BE32A28112800738732 /* GradientBorderButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +24,8 @@
 		764E50A920BEE08E00709473 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		764E50AC20BEE08E00709473 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		764E50AE20BEE08E00709473 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9FC188FE2A28076D0015FA4F /* GradientBorderButton */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = GradientBorderButton; sourceTree = "<group>"; };
+		9F074BE02A28111700738732 /* CALayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
+		9F074BE32A28112800738732 /* GradientBorderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientBorderButton.swift; sourceTree = "<group>"; };
 		9FCDC4C02A2808C800B7186D /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		9FCDC4C12A2808CF00B7186D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -33,7 +35,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FCDC4C42A28098A00B7186D /* GradientBorderButton in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,12 +44,11 @@
 		764E509620BEE08C00709473 = {
 			isa = PBXGroup;
 			children = (
-				9FCDC4C02A2808C800B7186D /* LICENSE */,
-				9FCDC4C12A2808CF00B7186D /* README.md */,
-				9FC188FE2A28076D0015FA4F /* GradientBorderButton */,
+				9F074BDD2A28110300738732 /* Sources */,
 				764E50A120BEE08C00709473 /* GradientBorderButtonExample */,
 				764E50A020BEE08C00709473 /* Products */,
-				9FCDC4C22A28098A00B7186D /* Frameworks */,
+				9FCDC4C12A2808CF00B7186D /* README.md */,
+				9FCDC4C02A2808C800B7186D /* LICENSE */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,11 +73,21 @@
 			path = GradientBorderButtonExample;
 			sourceTree = "<group>";
 		};
-		9FCDC4C22A28098A00B7186D /* Frameworks */ = {
+		9F074BDD2A28110300738732 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				9F074BE32A28112800738732 /* GradientBorderButton.swift */,
+				9F074BE22A28111F00738732 /* Extensions */,
 			);
-			name = Frameworks;
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		9F074BE22A28111F00738732 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9F074BE02A28111700738732 /* CALayer+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,7 +107,6 @@
 			);
 			name = GradientBorderButtonExample;
 			packageProductDependencies = (
-				9FCDC4C32A28098A00B7186D /* GradientBorderButton */,
 			);
 			productName = GradientBorderButton;
 			productReference = 764E509F20BEE08C00709473 /* GradientBorderButtonExample.app */;
@@ -156,6 +165,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F074BE12A28111700738732 /* CALayer+Extensions.swift in Sources */,
+				9F074BE42A28112800738732 /* GradientBorderButton.swift in Sources */,
 				764E50A520BEE08C00709473 /* ViewController.swift in Sources */,
 				764E50A320BEE08C00709473 /* AppDelegate.swift in Sources */,
 			);
@@ -361,13 +372,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		9FCDC4C32A28098A00B7186D /* GradientBorderButton */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = GradientBorderButton;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 764E509720BEE08C00709473 /* Project object */;
 }

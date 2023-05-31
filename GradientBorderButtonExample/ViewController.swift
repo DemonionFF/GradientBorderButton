@@ -1,7 +1,6 @@
 //  Copyright © 2023 DA. All rights reserved.
 
 import UIKit
-import GradientBorderButton
 
 final class ViewController: UIViewController {
 

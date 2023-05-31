@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmY-E7-el6" customClass="GradientBorderButton" customModule="GradientBorderButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmY-E7-el6" customClass="GradientBorderButton" customModule="GradientBorderButtonExample">
                                 <rect key="frame" x="20" y="70" width="335" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="mLj-6G-JFv"/>
