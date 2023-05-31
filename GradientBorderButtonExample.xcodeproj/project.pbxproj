@@ -1,0 +1,373 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		764E50A320BEE08C00709473 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764E50A220BEE08C00709473 /* AppDelegate.swift */; };
+		764E50A520BEE08C00709473 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764E50A420BEE08C00709473 /* ViewController.swift */; };
+		764E50A820BEE08C00709473 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 764E50A620BEE08C00709473 /* Main.storyboard */; };
+		764E50AA20BEE08E00709473 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 764E50A920BEE08E00709473 /* Assets.xcassets */; };
+		764E50AD20BEE08E00709473 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 764E50AB20BEE08E00709473 /* LaunchScreen.storyboard */; };
+		9FCDC4C42A28098A00B7186D /* GradientBorderButton in Frameworks */ = {isa = PBXBuildFile; productRef = 9FCDC4C32A28098A00B7186D /* GradientBorderButton */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		764E509F20BEE08C00709473 /* GradientBorderButtonExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GradientBorderButtonExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		764E50A220BEE08C00709473 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		764E50A420BEE08C00709473 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		764E50A720BEE08C00709473 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		764E50A920BEE08E00709473 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		764E50AC20BEE08E00709473 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		764E50AE20BEE08E00709473 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FC188FE2A28076D0015FA4F /* GradientBorderButton */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = GradientBorderButton; sourceTree = "<group>"; };
+		9FCDC4C02A2808C800B7186D /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		9FCDC4C12A2808CF00B7186D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		764E509C20BEE08C00709473 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FCDC4C42A28098A00B7186D /* GradientBorderButton in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		764E509620BEE08C00709473 = {
+			isa = PBXGroup;
+			children = (
+				9FCDC4C02A2808C800B7186D /* LICENSE */,
+				9FCDC4C12A2808CF00B7186D /* README.md */,
+				9FC188FE2A28076D0015FA4F /* GradientBorderButton */,
+				764E50A120BEE08C00709473 /* GradientBorderButtonExample */,
+				764E50A020BEE08C00709473 /* Products */,
+				9FCDC4C22A28098A00B7186D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		764E50A020BEE08C00709473 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				764E509F20BEE08C00709473 /* GradientBorderButtonExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		764E50A120BEE08C00709473 /* GradientBorderButtonExample */ = {
+			isa = PBXGroup;
+			children = (
+				764E50A220BEE08C00709473 /* AppDelegate.swift */,
+				764E50A420BEE08C00709473 /* ViewController.swift */,
+				764E50A620BEE08C00709473 /* Main.storyboard */,
+				764E50A920BEE08E00709473 /* Assets.xcassets */,
+				764E50AB20BEE08E00709473 /* LaunchScreen.storyboard */,
+				764E50AE20BEE08E00709473 /* Info.plist */,
+			);
+			path = GradientBorderButtonExample;
+			sourceTree = "<group>";
+		};
+		9FCDC4C22A28098A00B7186D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		764E509E20BEE08C00709473 /* GradientBorderButtonExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 764E50C720BEE08E00709473 /* Build configuration list for PBXNativeTarget "GradientBorderButtonExample" */;
+			buildPhases = (
+				764E509B20BEE08C00709473 /* Sources */,
+				764E509C20BEE08C00709473 /* Frameworks */,
+				764E509D20BEE08C00709473 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GradientBorderButtonExample;
+			packageProductDependencies = (
+				9FCDC4C32A28098A00B7186D /* GradientBorderButton */,
+			);
+			productName = GradientBorderButton;
+			productReference = 764E509F20BEE08C00709473 /* GradientBorderButtonExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		764E509720BEE08C00709473 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 1430;
+				ORGANIZATIONNAME = "Dmytro Antonchenko";
+				TargetAttributes = {
+					764E509E20BEE08C00709473 = {
+						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = "";
+					};
+				};
+			};
+			buildConfigurationList = 764E509A20BEE08C00709473 /* Build configuration list for PBXProject "GradientBorderButtonExample" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 764E509620BEE08C00709473;
+			productRefGroup = 764E50A020BEE08C00709473 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				764E509E20BEE08C00709473 /* GradientBorderButtonExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		764E509D20BEE08C00709473 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				764E50AD20BEE08E00709473 /* LaunchScreen.storyboard in Resources */,
+				764E50AA20BEE08E00709473 /* Assets.xcassets in Resources */,
+				764E50A820BEE08C00709473 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		764E509B20BEE08C00709473 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				764E50A520BEE08C00709473 /* ViewController.swift in Sources */,
+				764E50A320BEE08C00709473 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		764E50A620BEE08C00709473 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				764E50A720BEE08C00709473 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		764E50AB20BEE08E00709473 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				764E50AC20BEE08E00709473 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		764E50C520BEE08E00709473 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		764E50C620BEE08E00709473 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		764E50C820BEE08E00709473 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = GradientBorderButtonExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = DemonionFF.GradientBorderButtonExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		764E50C920BEE08E00709473 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = GradientBorderButtonExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = DemonionFF.GradientBorderButtonExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		764E509A20BEE08C00709473 /* Build configuration list for PBXProject "GradientBorderButtonExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				764E50C520BEE08E00709473 /* Debug */,
+				764E50C620BEE08E00709473 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		764E50C720BEE08E00709473 /* Build configuration list for PBXNativeTarget "GradientBorderButtonExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				764E50C820BEE08E00709473 /* Debug */,
+				764E50C920BEE08E00709473 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9FCDC4C32A28098A00B7186D /* GradientBorderButton */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GradientBorderButton;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 764E509720BEE08C00709473 /* Project object */;
+}

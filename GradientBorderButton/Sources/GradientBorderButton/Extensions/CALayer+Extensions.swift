@@ -1,6 +1,6 @@
 // MIT License
 
-// Copyright (c) 2018 DemonionFF
+// Copyright (c) 2023 DemonionFF
 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -24,39 +24,31 @@ import UIKit
 
 extension CALayer {
     
-    enum GradientDirection {
-        case vertical, horizontal
-        
-        var startPoint: CGPoint {
-            switch self {
-            case .vertical:             return CGPoint(x: 0.5, y: 0)
-            case .horizontal:           return CGPoint(x: 0, y: 0.5)
-            }
-        }
-        
-        var endPoint: CGPoint {
-            switch self {
-            case .vertical:             return CGPoint(x: 0.5, y: 1)
-            case .horizontal:           return CGPoint(x: 1, y: 0.5)
-            }
-        }
-    }
-    
     @discardableResult
-    func addGradientBorder(direction: CALayer.GradientDirection, lineWidth: CGFloat, colors: [UIColor]) -> CAGradientLayer {
+    func addGradientBorder(direction: GradientBorderButton.Direction, lineWidth: CGFloat, colors: [UIColor]) -> CAGradientLayer {
         
         let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = CGRect(x: 0, y: 0, width: bounds.size.width, height: bounds.size.height)
+        gradientLayer.frame = CGRect(
+            x: .zero,
+            y: .zero,
+            width: bounds.size.width,
+            height: bounds.size.height
+        )
         gradientLayer.startPoint = direction.startPoint
         gradientLayer.endPoint = direction.endPoint
-        gradientLayer.colors = colors.map{$0.cgColor}
+        gradientLayer.colors = colors.map { $0.cgColor }
         
         let shapeLayer = CAShapeLayer()
         shapeLayer.lineWidth = lineWidth
-        let movedPath = CGRect(x: shapeLayer.lineWidth / 2 , y: shapeLayer.lineWidth / 2, width: bounds.size.width - shapeLayer.lineWidth, height: bounds.size.height - shapeLayer.lineWidth)
-        ///Preventing top left empty corner
-        ///Underthehood calculations are different
-        if cornerRadius == 0 {
+        let movedPath = CGRect(
+            x: shapeLayer.lineWidth / 2,
+            y: shapeLayer.lineWidth / 2,
+            width: bounds.size.width - shapeLayer.lineWidth,
+            height: bounds.size.height - shapeLayer.lineWidth
+        )
+        // Preventing top left empty corner
+        // underthehood calculations are different
+        if cornerRadius == .zero {
             shapeLayer.path = UIBezierPath(rect: movedPath).cgPath
         } else {
             shapeLayer.path = UIBezierPath(roundedRect: movedPath, cornerRadius: cornerRadius).cgPath
@@ -64,19 +56,24 @@ extension CALayer {
         shapeLayer.fillColor = nil
         shapeLayer.strokeColor = UIColor.white.cgColor
         gradientLayer.mask = shapeLayer
-        insertSublayer(gradientLayer, at: 0)
+        insertSublayer(gradientLayer, at: .zero)
         return gradientLayer
     }
     
     @discardableResult
-    func addFillGradient(direction: CALayer.GradientDirection = .horizontal, colors: [UIColor]) -> CAGradientLayer {
+    func addFillGradient(direction: GradientBorderButton.Direction = .horizontal, colors: [UIColor]) -> CAGradientLayer {
         let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = CGRect(x: 0, y: 0, width: bounds.size.width, height: bounds.size.height)
+        gradientLayer.frame = CGRect(
+            origin: .zero,
+            size: .init(
+                width: bounds.size.width,
+                height: bounds.size.height
+            )
+        )
         gradientLayer.startPoint = direction.startPoint
         gradientLayer.endPoint = direction.endPoint
-        gradientLayer.colors = colors.map{$0.cgColor}
-        insertSublayer(gradientLayer, at: 0)
+        gradientLayer.colors = colors.map { $0.cgColor }
+        insertSublayer(gradientLayer, at: .zero)
         return gradientLayer
     }
-    
 }

@@ -1,6 +1,6 @@
 // MIT License
 
-// Copyright (c) 2018 DemonionFF
+// Copyright (c) 2023 DemonionFF
 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,57 +23,81 @@
 
 import UIKit
 
-enum GradientButtonState {
-    case none, border, fill
+open class GradientBorderButton: UIButton {
     
-    var title: String {
-        switch self {
-        case .none:             return "None"
-        case .border:           return "Border"
-        case .fill:             return "Fill"
+    public enum State {
+        case none, border, fill
+    }
+    
+    public enum Direction {
+        case vertical, horizontal, custom(start: CGPoint, end: CGPoint)
+        
+        var startPoint: CGPoint {
+            switch self {
+            case .vertical:             return .init(x: 0.5, y: 0)
+            case .horizontal:           return .init(x: 0, y: 0.5)
+            case .custom(let start, _): return start
+            }
+        }
+        
+        var endPoint: CGPoint {
+            switch self {
+            case .vertical:             return .init(x: 0.5, y: 1)
+            case .horizontal:           return .init(x: 1, y: 0.5)
+            case .custom(_, let end):   return end
+            }
         }
     }
-}
-
-struct GradientButtonOptions {
-    let borderWidth: CGFloat?
-    let colors: [UIColor]
-    let cornerRadius: CGFloat?
-    let direction: CALayer.GradientDirection?
     
-    init(direction: CALayer.GradientDirection? = nil, borderWidth: CGFloat? = nil, colors: [UIColor] = [], cornerRadius: CGFloat? = nil) {
-        self.direction = direction
-        self.borderWidth = borderWidth
-        self.colors = colors
-        self.cornerRadius = cornerRadius
+    public struct Options {
+        
+        public let borderWidth: CGFloat?
+        public let colors: [UIColor]
+        public let cornerRadius: CGFloat?
+        public let direction: Direction?
+        
+        public init(
+            direction: Direction? = nil,
+            borderWidth: CGFloat? = nil,
+            colors: [UIColor] = [],
+            cornerRadius: CGFloat? = nil
+        ) {
+            self.direction = direction
+            self.borderWidth = borderWidth
+            self.colors = colors
+            self.cornerRadius = cornerRadius
+        }
     }
-}
 
-class GradientBorderButton: UIButton {
     
-    //MARK: - UI Properties
+    // MARK: - UI Properties
+    
     private var gradientBorderWidth: CGFloat = 1
-    private var colors: [UIColor] = [.green, .yellow]
-    private var cornerRadius: CGFloat = 0
-    private var gradientDirection: CALayer.GradientDirection = .horizontal
+    private var colors: [UIColor] = [.systemGreen, .systemYellow]
+    private var cornerRadius: CGFloat = .zero
+    private var gradientDirection: Direction = .horizontal
     
-    //MARK: - Layers
+    // MARK: - Layers
+    
     private var gradientBorderLayer: CAGradientLayer?
     private var gradientLayer: CAGradientLayer?
     
-    //MARK: - Button State
-    fileprivate var gradientState: GradientButtonState = .border {
+    // MARK: - Button State
+    
+    private var gradientState: State = .border {
         didSet {
+            guard oldValue != gradientState else { return }
             updateStateVisually()
         }
     }
     
-    //MARK: - Open State changer
-    func update(state: GradientButtonState) {
+    // MARK: - Open State changer
+    
+    open func update(state: State) {
         gradientState = state
     }
     
-    func configure(with options: GradientButtonOptions) {
+    open func configure(withOptions options: Options) {
         gradientBorderWidth = options.borderWidth ?? gradientBorderWidth
         colors = options.colors.isEmpty ? colors : options.colors
         cornerRadius = options.cornerRadius ?? cornerRadius
@@ -81,13 +105,21 @@ class GradientBorderButton: UIButton {
         updateStateVisually()
     }
     
-    //MARK: - View cycles
-    override func layoutSubviews() {
+    // MARK: - View cycles
+    
+    open override func layoutSubviews() {
         super.layoutSubviews()
         updateStateVisually()
     }
     
-    //MARK: - redraw according state
+    open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        guard traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle else { return }
+        updateStateVisually()
+    }
+    
+    // MARK: - Redraw according state
+    
     private func updateStateVisually() {
         layer.cornerRadius = cornerRadius
         layer.masksToBounds = !(cornerRadius == 0)
@@ -108,5 +140,4 @@ class GradientBorderButton: UIButton {
         gradientLayer?.removeFromSuperlayer()
         gradientLayer = nil
     }
-    
 }
