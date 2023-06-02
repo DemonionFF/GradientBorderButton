@@ -44,11 +44,11 @@ view.addSubview(gradientButton)
 
 ## Customization
 
-1. Available ```GradientButtonState```'s: ```.none```, ```.fill```, ```.border```
+1. Available ```GradientBorderButton.State```'s: ```.none```, ```.fill```, ```.border```
 ```swift
 yourGradientBorderButton.update(state: .fill)
 ```
-2. Using ```GradientButtonOptions```
+2. Using ```GradientBorderButton.Options```
 
 
 Available parameters: 
@@ -59,13 +59,13 @@ Available parameters:
 
 Instantiate your options and pass them to button.
 ```swift
-let options = GradientButtonOptions(borderWidth: 4)
+let options = GradientBorderButton.Options(borderWidth: 4)
 yourGradientBorderButton.configure(with: options)
 ```
 
 ## Note
 
-Each update with ```GradientButtonOptions``` updates only options you passed in.
+Each update with ```GradientBorderButton.Options``` updates only options you passed in.
 
 
 ## Meta
